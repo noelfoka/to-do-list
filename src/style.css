@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.main-panel {
+  min-width: 40%;
+  max-width: 75%;
+  margin: auto;
+  display: grid;
+  box-shadow: 0 0 10px #888;
+}
+
+.list-title {
+  font-size: inherit;
+  margin: 0;
+}
+
+.add-input {
+  border: 1px solid black;
+  font-style: italic;
+}
+
+.add-input,
+.clear-btn {
+  border: none;
+}
+
+.list-title,
+.add-input,
+li,
+.clear-btn {
+  padding: 15px;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.clear-btn {
+  color: gray;
+  font-size: 14px;
+  border: none;
+}
