@@ -2,12 +2,12 @@
 import './style.css';
 
 const obj = {
-  description: 'wash the dishes',
+  description: 'Write an article',
   completed: true,
   index: 0,
 };
 const obj1 = {
-  description: 'complete To Do list project',
+  description: 'Take a cofee',
   completed: true,
   index: 1,
 };
