@@ -1,4 +1,4 @@
-import lodash from 'lodash';
+// import lodash from 'lodash';
 import './style.css';
 
 const obj = {
@@ -14,7 +14,7 @@ const obj1 = {
 
 const arr = [obj, obj1];
 
-const _ = lodash;
+// const _ = lodash;
 
 window.addEventListener('load', () => {
   for (let i = 0; i < arr.length; i += 1) {
