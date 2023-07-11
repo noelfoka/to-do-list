@@ -23,7 +23,7 @@
   - [👥 Authors ](#-authors-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
-- [🔭 Future Features ](#-future-features-)
+  - [🔭 Future Features ](#-future-features-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
@@ -102,7 +102,7 @@ If you like this project, give me a ⭐.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Futures Features-->
-# 🔭 Future Features <a name="future-features"></a>
+## 🔭 Future Features <a name="future-features"></a>
 
 
 - [ ] **Add and remove the list**
