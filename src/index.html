@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>TO-DO LIST</title>
-        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <title>To do list</title>
     </head>
     <body>
-        <div class="main-panel">
-            <h1 class="list-title">Today's To Do</h1>
-            <input class="add-input" type="text" placeholder="Add to your list">
-            <ul id="todo-list">
+        <section class="hero">
 
-            </ul>
-            <button class="clear-btn" type="button" name="button">Clear all
-                completed</button>
-        </div>
+            <div class="txt"> <h2>Today's To Do</h2></div>
+            <div class="input">
+                <input type="text" placeholder="Add to your list...">
+                <img src="./images/reload.svg" alt>
+            </div>
+            <div class="list1">
+                <ul>
+                    <li><input type="checkbox">HTML</li>
+                    <li><label for id="0"></label></li>
+                </ul>
+                <img src="images/3-vertical-dots.svg" alt>
+            </div>
+            <div class="list2">
+                <ul>
+                    <li><input type="checkbox"></li>
+                    <li><label for id="1"></label></li>
+                </ul>
+                <img src="images/3-vertical-dots.svg" alt>
+            </div>
+            <div>
+                <button>Clear all completed</button>
+            </div>
+
+        </section>
+
+        <script src="./index.js"></script>
     </body>
-
-    <script type="module" src="./index.js"></script>
 </html>

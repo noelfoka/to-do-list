@@ -1,10 +1,21 @@
-function component() {
-  const element = document.createElement('div');
+// import _ from 'lodash';
+import './style.css';
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const obj = {
+  description: 'wash the dishes',
+  completed: true,
+  index: 0,
+};
+const obj1 = {
+  description: 'complete To Do list project',
+  completed: true,
+  index: 1,
+};
 
-  return element;
-}
+const arr = [obj, obj1];
 
-document.body.appendChild(component());
+window.addEventListener('load', () => {
+  for (let i = 0; i < arr.length; i += 1) {
+    document.getElementById(arr[i].index).innerHTML = arr[i].description;
+  }
+});
