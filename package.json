@@ -38,6 +38,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.5",
     "lodash": "^4.17.21"
   }
 }
