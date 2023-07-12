@@ -1,62 +1,57 @@
-// import lodash from 'lodash';
 import './style.css';
+import List from './modules/list.js';
 
+const form = document.getElementById('list-form');
+const listContainer = document.getElementById('list-container');
 const tasks = [
-  {
-    description: 'Wash the dishes',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'Complete To Do list project',
-    completed: true,
-    index: 1,
-  },
+  { description: 'Task 1', complete: true, id: 0 },
+  { description: 'Task 2', complete: true, id: 1 },
+  { description: 'Task 3', complete: false, id: 2 },
 ];
+let id = tasks.length;
 
-// const _ = lodash;
+function renderList() {
+  // Clear the list container
+  listContainer.innerHTML = '';
 
-function populateTaskLists() {
-  const taskList1 = document.getElementById('task-list-1');
-  const taskList2 = document.getElementById('task-list-2');
+  // Render each task as a checkbox
+  tasks.forEach((task) => {
+    const listItem = document.createElement('li');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = task.completed;
 
-  if (taskList1 && taskList2) {
-    for (let i = 0; i < tasks.length; i + 1) {
-      const task = tasks[i];
-      const listItem = document.createElement('li');
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.checked = task.completed;
-      const label = document.createElement('label');
-      label.htmlFor = task.index;
-      label.innerHTML = task.description;
-      listItem.appendChild(checkbox);
-      listItem.appendChild(label);
+    const label = document.createElement('label');
+    label.textContent = task.description;
 
-      if (i % 2 === 0) {
-        taskList1.appendChild(listItem);
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        label.style.textDecoration = 'line-through';
+        label.style.fontStyle = 'italic';
       } else {
-        taskList2.appendChild(listItem);
+        label.style.textDecoration = 'none';
       }
-    }
-  }
-}
+    });
 
-function clearCompletedTasks() {
-  const checkboxes = document.querySelectorAll('input[type=checkbox]');
-
-  for (let i = 0; i < checkboxes.length; i + 1) {
-    if (checkboxes[i].checked) {
-      checkboxes[i].parentNode.remove();
-    }
-  }
-}
-
-window.addEventListener('load', () => {
-  populateTaskLists();
-
-  const clearCompletedBtn = document.getElementById('clear-completed-btn');
-  clearCompletedBtn.addEventListener('click', () => {
-    clearCompletedTasks();
+    listItem.appendChild(checkbox);
+    listItem.appendChild(label);
+    listContainer.appendChild(listItem);
   });
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const input = document.getElementById('input-id');
+  const todo = new List(input.value, Boolean(), id);
+  tasks.push(todo);
+  // Pushing Objests in Task Array!
+  id += 1;
+  renderList();
 });
+
+// Render the list on page load
+document.addEventListener('DOMContentLoaded', () => {
+  renderList();
+});
+
+console.log('tasks', tasks);
