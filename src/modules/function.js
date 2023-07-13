@@ -3,7 +3,6 @@ import List from './list.js';
 const form = document.getElementById('list-form');
 const listContainer = document.getElementById('list-container');
 let tasks = [];
-let id = 0;
 
 // Function to save tasks to local storage
 function saveTasksToLocalStorage() {
@@ -72,9 +71,9 @@ function renderList() {
 // Function to handle form submission
 function handleFormSubmit() {
   const input = document.getElementById('input-id');
-  const todo = new List(input.value, Boolean(), id);
+  const maxId = tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) : 0;
+  const todo = new List(input.value, Boolean(), maxId + 1);
   tasks.push(todo);
-  id = tasks.length;
   saveTasksToLocalStorage();
   renderList();
   input.value = '';
@@ -83,10 +82,12 @@ function handleFormSubmit() {
 // Function to load tasks from local storage
 function loadTasksFromLocalStorage() {
   const storedTasks = localStorage.getItem('tasks');
+  let id = 0;
   if (storedTasks) {
     tasks = JSON.parse(storedTasks);
     id = tasks.length;
   }
+  console.log(id);
 }
 
 // Event listener for form submission
@@ -106,7 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
   loadTasksFromLocalStorage();
   renderList();
 });
-
-console.log('tasks', tasks);
 
 export default Function;
