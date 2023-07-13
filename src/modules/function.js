@@ -74,9 +74,10 @@ function handleFormSubmit() {
   const input = document.getElementById('input-id');
   const todo = new List(input.value, Boolean(), id);
   tasks.push(todo);
-  id += 1;
-  renderList();
+  id = tasks.length;
   saveTasksToLocalStorage();
+  renderList();
+  input.value = '';
 }
 
 // Function to load tasks from local storage
