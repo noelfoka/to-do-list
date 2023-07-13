@@ -9,6 +9,13 @@ function saveTasksToLocalStorage() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Function to reorder tasks after deletion
+function reorderTasks() {
+  tasks.forEach((task, index) => {
+    task.id = index + 1;
+  });
+}
+
 // Function to render the list
 function renderList() {
   listContainer.innerHTML = '';
@@ -45,6 +52,7 @@ function renderList() {
     remove.innerHTML = '<i class="fas fa-trash"></i>';
     remove.addEventListener('click', () => {
       tasks.splice(index, 1);
+      reorderTasks();
       renderList();
       saveTasksToLocalStorage();
     });
