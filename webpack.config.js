@@ -27,26 +27,9 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-      {
-        test: /\.(gif|png|jpe?g)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-            },
-          },
-        ],
-      },
-
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
     ],
   },
   optimization: {
-    runtimeChunk: 'single',
+    // runtimeChunk: 'single',
   },
 };
