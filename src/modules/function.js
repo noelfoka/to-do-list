@@ -5,14 +5,9 @@ const listContainer = document.getElementById('list-container');
 let tasks = [];
 let id = 0;
 
-// Function to handle form submission
-function handleFormSubmit() {
-  const input = document.getElementById('input-id');
-  const todo = new List(input.value, Boolean(), id);
-  tasks.push(todo);
-  id += 1;
-  renderList();
-  saveTasksToLocalStorage();
+// Function to save tasks to local storage
+function saveTasksToLocalStorage() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // Function to render the list
@@ -74,9 +69,14 @@ function renderList() {
   });
 }
 
-// Function to save tasks to local storage
-function saveTasksToLocalStorage() {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+// Function to handle form submission
+function handleFormSubmit() {
+  const input = document.getElementById('input-id');
+  const todo = new List(input.value, Boolean(), id);
+  tasks.push(todo);
+  id += 1;
+  renderList();
+  saveTasksToLocalStorage();
 }
 
 // Function to load tasks from local storage
