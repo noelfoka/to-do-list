@@ -66,8 +66,8 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd awesome-bokks-with-es6
-  git clone git@github.com:noelfoka/awesome-bokks-with-es6.git
+  cd ato-do-list
+  git clone https://github.com/noelfoka/to-do-list.git
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

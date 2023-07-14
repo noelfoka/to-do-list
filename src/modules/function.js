@@ -110,6 +110,15 @@ enterBtn.addEventListener('click', () => {
   handleFormSubmit();
 });
 
+// Event listener for Clear Completed Tasks Button
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', () => {
+  tasks = tasks.filter((task) => !task.completed);
+  reorderTasks();
+  saveTasksToLocalStorage();
+  renderList();
+});
+
 // Load tasks from local storage and render the list
 document.addEventListener('DOMContentLoaded', () => {
   loadTasksFromLocalStorage();
