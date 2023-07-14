@@ -114,6 +114,7 @@ enterBtn.addEventListener('click', () => {
 const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => {
   tasks = tasks.filter((task) => !task.completed);
+  reorderTasks();
   saveTasksToLocalStorage();
   renderList();
 });
