@@ -1,12 +1,12 @@
-import List from "./list.js";
+import List from './list.js';
 
-const form = document.getElementById("list-form");
-const listContainer = document.getElementById("list-container");
+const form = document.getElementById('list-form');
+const listContainer = document.getElementById('list-container');
 let tasks = [];
 
 // Function to save tasks to local storage
 function saveTasksToLocalStorage() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // Function to reorder tasks after deletion
@@ -18,49 +18,49 @@ function reorderTasks() {
 
 // Function to render the list
 function renderList() {
-  listContainer.innerHTML = "";
+  listContainer.innerHTML = '';
 
   tasks.forEach((task, index) => {
-    const checkbox = document.createElement("input");
-    const remove = document.createElement("button");
-    const strdiv = document.createElement("div");
-    const btndiv = document.createElement("div");
+    const checkbox = document.createElement('input');
+    const remove = document.createElement('button');
+    const strdiv = document.createElement('div');
+    const btndiv = document.createElement('div');
 
-    checkbox.type = "checkbox";
+    checkbox.type = 'checkbox';
     checkbox.checked = task.completed;
-    const listItem = document.createElement("li");
-    const edit = document.createElement("button");
-    edit.className = "editbtn";
+    const listItem = document.createElement('li');
+    const edit = document.createElement('button');
+    edit.className = 'editbtn';
     edit.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
-    edit.addEventListener("click", () => {
-      listItem.contentEditable = "true";
+    edit.addEventListener('click', () => {
+      listItem.contentEditable = 'true';
     });
 
-    checkbox.addEventListener("change", () => {
+    checkbox.addEventListener('change', () => {
       task.completed = checkbox.checked;
       if (checkbox.checked) {
-        listItem.style.textDecoration = "line-through";
-        listItem.style.fontStyle = "italic";
+        listItem.style.textDecoration = 'line-through';
+        listItem.style.fontStyle = 'italic';
       } else {
-        listItem.style.textDecoration = "none";
-        listItem.style.fontStyle = "normal";
+        listItem.style.textDecoration = 'none';
+        listItem.style.fontStyle = 'normal';
       }
       saveTasksToLocalStorage();
     });
 
-    remove.className = "removebtn";
+    remove.className = 'removebtn';
     remove.innerHTML = '<i class="fas fa-trash"></i>';
-    remove.addEventListener("click", () => {
+    remove.addEventListener('click', () => {
       tasks.splice(index, 1);
       reorderTasks();
       renderList();
       saveTasksToLocalStorage();
     });
 
-    listItem.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
+    listItem.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
         e.preventDefault();
-        listItem.contentEditable = "false";
+        listItem.contentEditable = 'false';
         task.description = listItem.innerText.trim();
         saveTasksToLocalStorage();
       }
@@ -78,19 +78,18 @@ function renderList() {
 
 // Function to handle form submission
 function handleFormSubmit() {
-  const input = document.getElementById("input-id");
-  const maxId =
-    tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) : 0;
+  const input = document.getElementById('input-id');
+  const maxId = tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) : 0;
   const todo = new List(input.value, Boolean(), maxId + 1);
   tasks.push(todo);
   saveTasksToLocalStorage();
   renderList();
-  input.value = "";
+  input.value = '';
 }
 
 // Function to load tasks from local storage
 function loadTasksFromLocalStorage() {
-  const storedTasks = localStorage.getItem("tasks");
+  const storedTasks = localStorage.getItem('tasks');
   let id = 0;
   if (storedTasks) {
     tasks = JSON.parse(storedTasks);
@@ -100,27 +99,27 @@ function loadTasksFromLocalStorage() {
 }
 
 // Event listener for form submission
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   handleFormSubmit();
 });
 
 // Event listener for button click with ID "enter"
-const enterBtn = document.getElementById("enter");
-enterBtn.addEventListener("click", () => {
+const enterBtn = document.getElementById('enter');
+enterBtn.addEventListener('click', () => {
   handleFormSubmit();
 });
 
-//Event listener for Clear Completed Tasks Button
-const clearButton = document.getElementById("clear");
-clearButton.addEventListener("click", () => {
+// Event listener for Clear Completed Tasks Button
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', () => {
   tasks = tasks.filter((task) => !task.completed);
   saveTasksToLocalStorage();
   renderList();
 });
 
 // Load tasks from local storage and render the list
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   loadTasksFromLocalStorage();
   renderList();
 });
