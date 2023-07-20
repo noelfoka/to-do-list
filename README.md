@@ -82,11 +82,17 @@ Clone this repository to your desired folder:
 - Twitter: [@noelnomgne](https://twitter.com/noelnomgne)
 - LinkedIn: [noelfoka](https://www.linkedin.com/in/no%C3%ABl-nomgne-foka-063013231/)
 
+👤 **Shah Zaman**
+
+- GitHub: [@sheezu900](https://github.com/sheezu900)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
+
+
 
 Contributions, issues, and feature requests are welcome!
 

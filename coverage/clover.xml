@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <coverage generated="1689848836340" clover="3.2.0">
   <project timestamp="1689848836340" name="All files">
+=======
+<coverage generated="1689847936961" clover="3.2.0">
+  <project timestamp="1689847936963" name="All files">
+>>>>>>> c538cc7cfd0f42e35b946a19821e4d328040d358
     <metrics statements="108" coveredstatements="74" conditionals="14" coveredconditionals="4" methods="18" coveredmethods="9" elements="140" coveredelements="87" complexity="0" loc="108" ncloc="108" packages="1" files="4" classes="4"/>
     <file name="displayTask.js" path="C:\Users\JOEL\Desktop\to-do-list microverse\to-do-list\src\module\displayTask.js">
       <metrics statements="73" coveredstatements="50" conditionals="12" coveredconditionals="3" methods="5" coveredmethods="2"/>
