@@ -3,6 +3,7 @@
  */
 import { getAddedTodos } from '../src/module/newTask.js';
 import { todo } from '../src/module/displayTask.js';
+import deleteTask from '../src/module/remove.js'
 // import deleteTask from '../src/module/remove.js';
 
 const createMock = (value) => {
@@ -74,3 +75,41 @@ describe('Add Tasks', () => {
     expect(taskSection.children[0].children.length).toEqual(4);
   });
 });
+
+
+/* Test remove function */
+it('Remove the exact number of tasks from the list ', () => {
+  todo.allTodos = [];
+  createMock('div-1');
+  localStorage.clear();
+  const taskSection = document.querySelector('.task-list');
+  getAddedTodos();
+  deleteTask(1);
+  expect(taskSection.children.length).toEqual(0);
+});
+it('Remove the exact number of tasks from the list ', () => {
+  todo.allTodos = [];
+  createMock('div-1');
+  localStorage.clear();
+  const taskSection = document.querySelector('.task-list');
+  const newTodo = document.getElementById('newToDo');
+  getAddedTodos();
+  addInputdiv('div-2', newTodo);
+  getAddedTodos();
+  deleteTask(2);
+  expect(taskSection.children[0].children.length).toEqual(1);
+});
+it('Remove the exact number of tasks from the list ', () => {
+  todo.allTodos = [];
+  createMock('div-1');
+  localStorage.clear();
+  const taskSection = document.querySelector('.task-list');
+  const newTodo = document.getElementById('newToDo');
+  getAddedTodos();
+  addInputdiv('div-2', newTodo);
+  getAddedTodos();
+  deleteTask(1);
+  addInputdiv('div-3', newTodo);
+  getAddedTodos();
+  expect(taskSection.children[0].children.length).toEqual(2);
+  });
