@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://kit.fontawesome.com/e4617bc15f.js"
-            crossorigin="anonymous"></script>
-        <link rel="stylesheet"
-            href="path/to/bootstrap-icons/css/bootstrap-icons.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6a9a323e39.js" crossorigin="anonymous"></script>
+    <title>To Do List</title>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+   <main>
+      <ul class="to-do-list">
+          <li class="title">
+              <h3>Today's To Do</h3>
+              <i class="fas fa-sync-alt"></i>
+          </li>
+          <li class="add-to-do">
+              <form action="#" id="form">
+                <input type="text" placeholder="Add to your list..." id="newToDo" required>
+              </form>
+          </li>
+          <li class="task-list"></li>
 
-        <title>To Do List</title>
-    <script defer src="main.js"></script></head>
-    <body>
-        <div class="container">
-            <div class="heading">
-                <h2>Today's To Do</h2>
-                <button type="button" id="refresh">
-                    <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-            </div>
-            <div class="line"></div>
-            <div class="Input">
-                <form id="list-form">
-                    <input type="text" id="input-id"
-                        placeholder="Add to your list......">
-                    <button type="button" id="enter"> <i
-                            class="fa-solid fa-reply"></i></button>
-                </form>
-            </div>
-            <ul id="list-container">
-            </ul>
-            <div class="btn"><button type="button" id="clear">Clear all
-                    completed</button></div>
-        </div>
-    </body>
+              <button type="button" id="clear">Clear all completed</button>
+        </ul>
+    </main>
+</body>
 </html>
