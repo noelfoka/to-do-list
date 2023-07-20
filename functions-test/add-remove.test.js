@@ -111,4 +111,22 @@ describe('Add Tasks', () => {
     getAddedTodos();
     expect(taskSection.children[0].children.length).toEqual(2);
   });
+  it('Remove all tasks from the list', () => {
+    todo.allTodos = [];
+    createMock('text-1');
+    localStorage.clear();
+    const newTodo = document.getElementById('newToDo');
+
+    getAddedTodos();
+    addInputdiv('text-2', newTodo);
+    getAddedTodos();
+    addInputdiv('text-3', newTodo);
+    getAddedTodos();
+    addInputdiv('text-3', newTodo);
+    getAddedTodos();
+
+    todo.clearAll();
+
+    expect(todo.allTodos.length).toEqual(0);
+  });
 });
