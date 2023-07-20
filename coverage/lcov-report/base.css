@@ -1,9 +1,22 @@
+/* stylelint-disable block-no-empty */
+/* stylelint-disable number-leading-zero */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable block-opening-brace-space-after */
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable declaration-block-single-line-max-declarations */
+/* stylelint-disable indentation */
+/* stylelint-disable declaration-colon-space-after */
+/* stylelint-disable selector-list-comma-newline-after */
+/* stylelint-disable selector-pseudo-element-colon-notation */
 body, html {
-  margin:0; padding: 0;
+  margin: 0;
+  padding: 0;
   height: 100%;
 }
 body {
-    font-family: Helvetica Neue, Helvetica, Arial;
+    font-family: Helvetica Neue, Helvetica, serif;
     font-size: 14px;
     color:#333;
 }
@@ -13,7 +26,7 @@ body {
      -moz-box-sizing:border-box;
           box-sizing:border-box;
   }
-h1 { font-size: 20px; margin: 0;}
+h1 { font-size: 20px; margin: 0; }
 h2 { font-size: 14px; }
 pre {
     font: 12px/1.4 Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -23,7 +36,7 @@ pre {
     -o-tab-size:  2;
     tab-size: 2;
 }
-a { color:#0074D9; text-decoration:none; }
+a { color:#0074d9; text-decoration:none; }
 a:hover { text-decoration:underline; }
 .strong { font-weight: bold; }
 .space-top1 { padding: 10px 0 0 0; }
@@ -44,14 +57,14 @@ a:hover { text-decoration:underline; }
   visibility:hidden;
   }
 .fl { float: left; }
-@media only screen and (max-width:640px) {
+@media only screen and (max-width: 640px) {
   .col3 { width:100%; max-width:100%; }
-  .hide-mobile { display:none!important; }
+  .hide-mobile { display:none !important; }
 }
 
 .quiet {
   color: #7f7f7f;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 .quiet a { opacity: 0.7; }
 
@@ -59,7 +72,7 @@ a:hover { text-decoration:underline; }
   font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 10px;
   color: #555;
-  background: #E8E8E8;
+  background: #e8e8e8;
   padding: 4px 5px;
   border-radius: 3px;
   vertical-align: middle;
@@ -134,8 +147,8 @@ table.coverage td span.cline-any {
 .coverage-summary th.abs,
 .coverage-summary td.pct,
 .coverage-summary td.abs { text-align: right; }
-.coverage-summary td.file { white-space: nowrap;  }
-.coverage-summary td.pic { min-width: 120px !important;  }
+.coverage-summary td.file { white-space: nowrap; }
+.coverage-summary td.pic { min-width: 120px !important; }
 .coverage-summary tfoot td { }
 
 .coverage-summary .sorter {
@@ -152,30 +165,21 @@ table.coverage td span.cline-any {
     background-position: 0 -10px;
 }
 .status-line {  height: 10px; }
-/* yellow */
 .cbranch-no { background: yellow !important; color: #111; }
-/* dark red */
-.red.solid, .status-line.low, .low .cover-fill { background:#C21F39 }
-.low .chart { border:1px solid #C21F39 }
+.red.solid, .status-line.low, .low .cover-fill { background:#c21f39; }
+.low .chart { border:1px solid #c21f39; }
 .highlighted,
-.highlighted .cstat-no, .highlighted .fstat-no, .highlighted .cbranch-no{
-  background: #C21F39 !important;
+.highlighted .cstat-no, .highlighted .fstat-no, .highlighted .cbranch-no {
+  background: #c21f39 !important;
 }
-/* medium red */
-.cstat-no, .fstat-no, .cbranch-no, .cbranch-no { background:#F6C6CE }
-/* light red */
-.low, .cline-no { background:#FCE1E5 }
-/* light green */
-.high, .cline-yes { background:rgb(230,245,208) }
-/* medium green */
-.cstat-yes { background:rgb(161,215,106) }
-/* dark green */
-.status-line.high, .high .cover-fill { background:rgb(77,146,33) }
-.high .chart { border:1px solid rgb(77,146,33) }
-/* dark yellow (gold) */
+.cstat-no, .fstat-no, .cbranch-no, .cbranch-no { background:#f6c6ce; }
+.low, .cline-no { background:#fce1e5; }
+.high, .cline-yes { background:rgb(230, 245, 208); }
+.cstat-yes { background:rgb(161, 215, 106); }
+.status-line.high, .high .cover-fill { background:rgb(77, 146, 33); }
+.high .chart { border:1px solid rgb(77, 146, 33); }
 .status-line.medium, .medium .cover-fill { background: #f9cd0b; }
 .medium .chart { border:1px solid #f9cd0b; }
-/* light yellow */
 .medium { background: #fff4c2; }
 
 .cstat-skip { background: #ddd; color: #111; }
