@@ -3,7 +3,7 @@
  */
 import { getAddedTodos } from '../src/module/newTask.js';
 import { todo } from '../src/module/displayTask.js';
-import deleteTask from '../src/module/remove.js'
+import deleteTask from '../src/module/remove.js';
 // import deleteTask from '../src/module/remove.js';
 
 const createMock = (value) => {
@@ -76,7 +76,6 @@ describe('Add Tasks', () => {
   });
 });
 
-
 /* Test remove function */
 it('Remove the exact number of tasks from the list ', () => {
   todo.allTodos = [];
@@ -112,4 +111,4 @@ it('Remove the exact number of tasks from the list ', () => {
   addInputdiv('div-3', newTodo);
   getAddedTodos();
   expect(taskSection.children[0].children.length).toEqual(2);
-  });
+});
